@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<head>
+    <title>Receipt Items</title>
+</head>
+
+<body>
+    {% include "scanner/navbar.html" %}
+    <h2>Receipt Items</h2>
+    <main>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Company name:</b>
+                <p>{{company}}</p>
+            </li>
+            <li class="list-group-item"><b>Address:</b>
+                <p>{{address}}</p>
+            </li>
+            <li class="list-group-item"><b>Date:</b>
+                <p>{{date}}</p>
+            </li>
+            <li class="list-group-item"><b>Full price:</b>
+                <p>{{full_price}}</p>
+            </li>
+            <li class="list-group-item">
+                <b>Items:</b>
+                {% for item in items %}
+                    <div class="item">
+                        {{ item.description }}: {{ item.price }}
+                    </div>
+                {% endfor %}
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>
+{% endblock %}

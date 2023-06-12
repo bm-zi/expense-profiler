@@ -1,0 +1,160 @@
+{% load static %}
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+    <h6
+      class="
+        sidebar-heading
+        d-flex
+        justify-content-between
+        align-items-center
+        px-3
+        mt-3
+        mb-1
+        text-muted"
+    >
+      <span>Home</span>
+    </h6>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="/">
+          <span data-feather="home"></span>
+          Dashboard
+        </a>
+      </li>
+    </ul>
+
+    <h6
+      class="
+        sidebar-heading
+        d-flex
+        justify-content-between
+        align-items-center
+        px-3
+        mt-3
+        mb-1
+        text-muted"
+    >
+      <span>Records</span>
+    </h6>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'expenses'%}">
+          <span data-feather="dollar-sign"></span>
+          Expenses Table
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'category_list' %}">
+          <span data-feather="list"></span>
+          Expense Categories
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'income' %}">
+          <span data-feather="file-text"></span>
+          Income Table
+        </a>
+      </li>
+    </ul>
+
+    <h6
+      class="
+        sidebar-heading
+        d-flex
+        justify-content-between
+        align-items-center
+        px-3
+        mt-4
+        mb-1
+        text-muted"
+    >
+      <span>Summary</span>
+    </h6>
+    <ul class="nav flex-column mb-2">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'expense-stats' %}">
+          <span data-feather="trending-up"></span>
+          Expenses Statistics
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'income-stats'%}">
+          <span data-feather="bar-chart"></span>
+          Income Statistics
+        </a>
+      </li>
+    </ul>
+
+    <!-- add scan  -->
+    <h6
+    class="
+      sidebar-heading
+      d-flex
+      justify-content-between
+      align-items-center
+      px-3
+      mt-4
+      mb-1
+      text-muted
+    "
+    >
+    <span>Receipts</span>
+    </h6>
+    <ul class="nav flex-column mb-2">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'receipt_upload_view' %}">
+        <span data-feather="camera"></span>
+        Receipt Upload
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'receipt_table_view' %}">
+        <span data-feather="eye"></span>
+        Receipt Table
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'receipt_photos_view' %}">
+        <span data-feather="image"></span>
+        Receipt Photos
+      </a>
+    </li>
+    </ul>
+    <!-- scan added -->
+
+    <h6
+      class="
+        sidebar-heading
+        d-flex
+        justify-content-between
+        align-items-center
+        px-3
+        mt-4
+        mb-1
+        text-muted
+      "
+    >
+      <span>Settings</span>
+    </h6>
+    <ul class="nav flex-column mb-2">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'preferences' %}">
+          <span data-feather="settings"></span>
+          General
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'account_update' %}">
+          <span data-feather="user"></span>
+          Account
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>

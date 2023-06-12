@@ -1,0 +1,55 @@
+{% block navbar %}
+
+    <nav class="nav navbar navbar-expand navbar-light bg-faded">
+        <div class="container">
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'receipt_upload_view' %}">
+                        Receipt Upload
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'receipt_table_view' %}">
+                        Receipt Table
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'receipt_photos_view' %}">
+                        Receipt Photos
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    {% if request.get_full_path == '/scanner/receipt_table/' %}
+                        {% if shop|length != 0 %} 
+                            <a href="{% url 'receipt_table_all_delete_view' %}" 
+                                class="nav-link text-danger">
+                                Delete All Receipts
+                            </a>
+                        {% endif %}
+                    {% endif %}
+        
+                    {% if request.get_full_path == '/scanner/receipt_photos/' %}
+                        {% if page_obj|length != 0 %}
+                            <a href="{% url 'receipt_photos_all_delete_view' %}"
+                                class="nav-link text-danger">
+                                Delete All Photos
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                
+                    {% if request.get_full_path == '/scanner/receipt_upload/' %}
+                        {% if shoppings != 0 or receipts != 0 %}
+                            <a href="{% url 'receipt_and_photos_all_delete_view' %}"
+                                class="nav-link text-danger">
+                                Delete All Saved Receipts & Photos
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+        {% endblock %}

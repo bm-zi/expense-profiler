@@ -1,0 +1,53 @@
+{% block navbar %}
+
+        <nav aria-label="breadcrumb" style="background: #ededed">
+            <ol class="breadcrumb">
+                <li>
+                    <a class="nav-link" href="{% url 'receipt_upload_view' %}">
+                        Receipt Upload
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{% url 'receipt_table_view' %}">
+                        Receipt Table
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{% url 'receipt_photos_view' %}">
+                        Receipt Photos
+                    </a>
+                </li>
+                <li>
+                    {% if request.get_full_path == '/scanner/receipt_table/' %}
+                        {% if shop|length != 0 %} 
+                            <a href="{% url 'receipt_table_all_delete_view' %}" 
+                                class="nav-link text-danger class="ml-auto"">
+                                Delete All Receipts
+                            </a>
+                        {% endif %}
+                    {% endif %}
+        
+                    {% if request.get_full_path == '/scanner/receipt_photos/' %}
+                        {% if page_obj|length != 0 %}
+                            <a href="{% url 'receipt_photos_all_delete_view' %}" 
+                                class="nav-link text-danger class="ml-auto"">
+                                Delete All Photos
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                
+                    {% if request.get_full_path == '/scanner/receipt_upload/' %}
+                        {% if shoppings != 0 or receipts != 0 %}
+                            <a href="{% url 'receipt_and_photos_all_delete_view' %}"
+                                class="nav-link text-danger class="ml-auto"">
+                                Delete All Saved Receipts & Photos
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                </li>
+            </ol>
+        </nav>
+
+    </div>
+
+{% endblock %}

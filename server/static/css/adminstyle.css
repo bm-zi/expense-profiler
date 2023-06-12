@@ -1,0 +1,49 @@
+#header {
+  background: #001524;
+  color: #ffecd1;
+}
+
+#branding h1 {
+  color: #ffecd1;
+}
+
+div.breadcrumbs {
+  background: #15616d;
+  color: #ffecd1;
+}
+
+.submit-row input {
+  width: 100%;
+  background-color: #15616d;
+}
+
+.submit-row input:hover {
+  background-color: #217683;
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+  background-color: #15616d;
+}
+
+a:link,
+a:visited {
+  color: #15616d;
+}
+
+.dashboard #content {
+  width: 900px;
+}
+
+#changelist .actions .button {
+  background: #ff7d00;
+  padding: 4px 10px;
+
+  border: 1px solid gray;
+  border-radius: 4px;
+  box-shadow: 0 -15px 20px -10px rgb(0 0 0 / 15%) inset;
+  height: 24px;
+  line-height: 1;
+  margin: auto;
+}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-2 w-100" >
+<h5>Expense Categories</h5>
+<hr />
+<form action="{% url 'category_delete' %}" method="post">
+    {% csrf_token %}
+    <div class="input-group mt-4 py-2" >
+        <label for="">Selected a category:</label>
+        <select class="custom-select" name="category_id" style="width: 90%;" id="">
+            {% for category in categories %}
+            <option value="{{category.id}}">{{category.name}}</option>
+            {% endfor %}
+        </select>
+        <div class="input-group-append">
+            <input class="btn btn-outline-danger px-4 mt-2" type="submit" value="Delete" />
+        </div>
+    </div>
+</form>
+</div>
+
+<div class="container mt-2 w-100" >
+    <hr />
+    <form action="category_create" method="post">
+        {% csrf_token %}
+        <div class="form-group py-2">
+          <label for="">Type in a new category:</label>
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="category_name"
+          />
+        </div>
+        <div class="input-group-append">
+            <input class="btn btn-outline-secondary px-4 mt-2" type="submit" value="Add"/>
+        </div>
+        </div>
+    </form>
+    </div>
+{% endblock %}

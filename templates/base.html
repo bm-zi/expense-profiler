@@ -1,0 +1,89 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Expense-Profiler {% block title %} {% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet" />
+    <link href="{%static 'css/main.css'%}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <!-- Custom styles for this template -->
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/upload.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/items.css' %}" />
+    <link href="{%static 'css/dashboard.css'%}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
+    >
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+        <span class="mx-3">Expense-Profiler</span>
+      </a>
+
+      <ul
+        class="navbar-nav px-3"
+        style="display: flex; flex-direction: row; align-items: center"
+      >
+      <li class="nav-item text-nowrap text-white" style="margin-right: 2rem;">
+        {{request.user.username}}
+      </li>
+
+      <li class="nav-item text-nowrap text-white" style="margin-right: 2rem;">
+          {{request.user.email}}
+      </li>
+
+      <li class="nav-item text-nowrap">
+          <form action="{% url 'logout' %}" method="POST" class="h-100 my-0">
+            {% csrf_token %}
+            <button
+              class="btn btn-secondary"
+              type="submit"
+            >Sign Out</button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          {% include 'partials/_sidebar.html'%}
+        </div>
+
+        <main role="main" class="col-md-10 px-4 mt-4">
+          <div>
+            {% block content %} {% endblock %}
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="/docs/4.4/static/js/vendor/jquery.slim.min.js"><\/script>'
+        );
+    </script>
+
+    
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

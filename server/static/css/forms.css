@@ -1,0 +1,55 @@
+.sign-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-form h2 {
+  margin: 1em 0;
+}
+
+.sign-form label {
+  display: block;
+  text-align: center;
+}
+
+.helptext {
+  display: block;
+}
+
+.submit-btn {
+  margin-top: 0.5em;
+}
+
+#formFile {
+  cursor: pointer;
+}
+
+.form-container {
+  margin: 0 auto;
+  width: 20rem;
+}
+
+.form-field-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: left;
+}
+
+.form-field-container label {
+  width: fit-content;
+  margin-bottom: 0px;
+  margin-top: 0.5rem;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.75rem;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 1rem;
+}

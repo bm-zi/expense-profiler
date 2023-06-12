@@ -1,0 +1,130 @@
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.showPasswordToggle {
+  cursor: pointer;
+  transition: all;
+}
+
+.showPasswordToggle:hover {
+  transform: scale(1.2);
+}
+
+.add-btn {
+  border-radius: 15px;
+  color: rgb(0, 191, 191);
+  border: 2px solid rgb(0, 191, 191);
+  font-weight: 600;
+}
+
+.add-btn:hover {
+  color: rgb(0, 223, 223);
+  border: 2px solid rgb(0, 223, 223);
+  transition: 0.4s ease-in-out;
+}
+
+.csv-btn {
+  border-radius: 15px;
+  color: #bd23ff;
+  border: 2px solid #bd23ff;
+  font-weight: 600;
+}
+
+.csv-btn:hover {
+  color: #d268ff;
+  border: 2px solid #d268ff;
+  transition: 0.4s ease-in-out;
+}
+
+.excel-btn {
+  border-radius: 15px;
+  color: #4823ff;
+  border: 2px solid #4823ff;
+  font-weight: 600;
+}
+
+.excel-btn:hover {
+  color: #d268ff;
+  border: 2px solid #d268ff;
+  transition: 0.4s ease-in-out;
+}
+
+.delete-btn {
+  border-radius: 15px;
+  color: #e80000;
+  border: 2px solid #e80000;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  color: #ff6b1b;
+  border: 2px solid #ff6b1b;
+  transition: 0.2s ease-in-out;
+}
+
+.edit-btn {
+  border-radius: 15px;
+  color: #00d595;
+  border: 2px solid #00d595;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.edit-btn:hover {
+  color: #00aed5;
+  border: 2px solid #00aed5;
+  transition: 0.2s ease-in-out;
+}
+
+.submit-btn {
+  border-radius: 15px;
+  color: #008ad5;
+  border: 2px solid #008ad5;
+  font-weight: 600;
+}
+
+.submit-btn:hover {
+  color: #0067d5;
+  border: 2px solid #0067d5;
+  transition: 0.2s ease-in-out;
+}
+
+.center-td {
+  text-align: center;
+}
+.table {
+  border: 1px solid #dee2e6;
+}
+
+td {
+  vertical-align: middle;
+}
+
+.alert {
+  color: white;
+}
+
+.alert-success {
+  background: #1abc9c;
+}
+
+.alert-danger {
+  background: #e83600;
+}
+
+.alert-info {
+  background: #d268ff;
+}

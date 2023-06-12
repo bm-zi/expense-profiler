@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <nav aria-label="breadcrumb" style="background: #ededed">
+        <ol class="breadcrumb p-2">
+          <li class="breadcrumb-item">
+            <a href="">Expenses</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            My Expenses Summary
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="col-md-3">
+      <a href="" class="btn btn-primary">BACK</a>
+    </div>
+
+    <div class="col-md-5 mx-auto">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="col-md-7 mx-auto my-auto">
+      <canvas id="lineChart"></canvas>
+  </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js" ></script>
+<script src="{% static 'js/stats.js' %}"></script>
+
+{% endblock %}

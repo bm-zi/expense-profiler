@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container mt-2">
+  <h1>Add Receipt to Expense</h1>
+  <nav aria-label="breadcrumb" style="background: #ededed">
+    <ol class="breadcrumb p-2">
+      <li class="breadcrumb-item">
+        <a href="{% url 'receipt_table_view'%}">Receipts</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Edit Receipt</li>
+    </ol>
+  </nav>
+
+  <div class="card">
+    <div class="card-body">
+      <form action="{% url 'receipt_addto_expense_view' shopping_id %}" method="post">
+        {% include 'partials/_messages.html'%} {% csrf_token %}
+        <div class="form-group py-2">
+          <label for="">Amount</label>
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="amount"
+            value="{{price}}"
+          />
+        </div>
+        <div class="form-group py-2">
+          <label for="">Description</label>
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            name="description"
+            value="{{description}}"
+          />
+        </div>
+        <div class="form-group py-2">
+          <label for="">Category</label>
+          <select class="form-control" name="category">
+            <option selected name="category" value="{{values.category}}">
+              {{category}}
+            </option>
+            {% for category in categories%}
+            <option name="category" value="{{category.name}}">
+              {{category.name}}
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group py-2">
+          <label for="">Date of Expense</label>
+          <input
+            type="date"
+            value="{{date |date:'Y-m-d' }}"
+            class="form-control form-control-sm"
+            name="expense_date"
+          />
+        </div>
+
+        <input
+          type="submit"
+          value="Add receipt to expenses"
+          class="btn submit-btn btn-primary-sm mt-2"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

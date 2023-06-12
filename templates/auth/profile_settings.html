@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+{% load crispy_forms_tags %}
+
+{% include 'partials/_messages.html' %}
+<div class="container mt-2">
+  <h1>Change User Data</h1>
+  <nav aria-label="breadcrumb" style="background: #ededed">
+    <ol class="breadcrumb p-2">
+      <li class="breadcrumb-item">
+        <a href="#"">Accout Update</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Change User Data</li>
+    </ol>
+  </nav>
+
+  <div class="card">
+    <div class="card-body">
+      <!-- form for changing user data -->
+      <form method="post" action='{% url "account_update" %}'>
+      {{user_data_form|crispy}} {% csrf_token %}
+      <input class="mt-2" name="save_data" value="update" type="submit" />
+      </form>
+    </div>
+  </div>
+
+  <div class="card mb-5"></div>
+  
+  <h1>Change Password</h1>
+  <nav aria-label="breadcrumb" style="background: #ededed">
+    <ol class="breadcrumb p-2">
+      <li class="breadcrumb-item">
+        <a href="#">Accout Update</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Change Password</li>
+    </ol>
+  </nav>
+  
+  <div class="card mb-5">
+    <div class="card-body">
+      <!-- form for changing password -->
+      <form method="post" action='{% url "account_update" %}'>
+        {{password_change_form|crispy}} {% csrf_token %}
+        <input class="mt-2" name="save_password" value="submit" type="submit" />
+      </form>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

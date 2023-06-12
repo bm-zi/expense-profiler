@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<div class="container">
+    <div class="container mt-2 px-0">
+        <h2>Upload or Take a Photo</h2>
+        {% include "scanner/navbar.html" %}
+ 
+        <div class="container mt-5" id="upload-photo-container">
+            <div class="activity">
+                <button class="btn btn-primary rounded" id="select-take-photo-method-btn">
+                    Take a photo with your webcam
+                </button>
+                <form id="img-form" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %} {{form.as_p}}
+                </form>
+            </div>
+        </div>
+
+        <div class="container" id="take-photo-container">
+            <div class="activity">
+                <button
+                    class="btn btn-primary active"
+                    id="select-upload-photo-method-btn"
+                >
+                    Upload photo from the drive
+                </button>
+                <button id="take-photo-button" class="btn btn-outline-primary">
+                    Take a photo
+                </button>
+            </div>
+
+            <div id="webcam-photo">
+                <video id="webcam" autoplay></video>
+                <canvas id="canvas"></canvas>
+                <img
+                    id="photo"
+                    class="img-fluid"
+                    alt="Screen capture will appear here"
+                />
+            </div>
+
+        </div>
+
+        <div class="container d-flex justify-content-center">
+            <input
+                form="img-form"
+                id="submit"
+                type="submit"
+                value="Save into Receipt Table"
+                class="btn btn-outline-primary submit-btn"
+            />
+        </div>
+
+        <div class="alert alert-secondary mt-5" role="alert">
+            <h6 class="alert-heading text-primary">About Receipts:</h6>
+            <p class="text-primary text-start text-wrap fs-6">
+                Receipts can be collected and saved into <span class="text-success">Receipt Table</span> by uploading the image of 
+                the receipt or taking a photo from the receipt by webcam and then they will be listed in 
+                <span class="text-success">Receipt Table</span> menu.
+                Later on, edited or modified receipt in <span class="text-success">Receipt Table</span> menu
+                can be moved and added to <span class="text-success">Expenses Table</span>. 
+                Any image file found in <span class="text-success">Receipt Photos Table</span> can be deleted without affecting other tables. 
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<script src="{% static 'js/webcam.js' %}"></script>
+{% endblock %}

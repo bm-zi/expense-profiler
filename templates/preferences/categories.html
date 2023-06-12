@@ -1,0 +1,14 @@
+<div class="container mt-2 w-100" >
+    {% include 'partials/_messages.html' %}
+    <h5>Category List</h5>
+    <hr />
+    <div>
+      <ul>
+        {% for category in categories %}
+        <li>
+          {{category.name}}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>

@@ -1,8 +1,8 @@
 # Expense Profiler
 This app is supposed to analize and report the data extracted from user expense/income.  
-The idea for this application is taken from two other applications, which hey have been consolidated together.  
+The idea for this application is taken from two other apps, which they have been consolidated in one app and enhanced with new features.
 
-- Here are the references to other two apps:  
+- Here are the references to other two apps used in this project:  
 <https://github.com/AdamJedrychowski/Recipt-Scanner.git>  
 <https://github.com/ajo01/SaveSavvy.git>
 
@@ -12,7 +12,7 @@ The idea for this application is taken from two other applications, which hey ha
 If you are installing on a ubuntu system take a note on following steps.  
 
 
-- To avoid issues with virtualenv uninstall and reinstall it it first.  
+- To avoid issues with virtualenv uninstall and reinstall it first.  
 
 ```
 sudo pip uninstall virtualenv
@@ -21,7 +21,7 @@ sudo -H pip install virtualenv
 
 - after creating and activating virtualenv continue with required packages.  
 
-```
+```bash
 virtualenv venv
 source venv/bin/activate
 pip install --upgrade pip
@@ -32,14 +32,16 @@ pip install -r requirements.txt
 
 If you chose postgres as RDS, the following is a reviw of set up database.  
 
-```
+- login to database
+
+```bash
 sudo -i -u postgres
-psql -h localhost -U dbuser -W
+psql -h localhost -U your_database_user -W
 # Or simply type:
 psql
 ```
 
-When you are in psql shell, try folowings:  
+- sql commands
 
 ```sql
 create database your_database_name;

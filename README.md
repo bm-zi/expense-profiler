@@ -68,7 +68,7 @@ DATABASES = {
 }
 ```
 
-- Create new file named .env bases on the file .env-sample in project root directory.  
+- Create new file named .env based on the file .env-sample in project root directory.  
 
 ```
 EMAIL_HOST_USER=user@gmail.com

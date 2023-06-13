@@ -1,0 +1,7 @@
+EMAIL_HOST_USER=user@gmail.com
+EMAIL_HOST_PASSWORD=password_for_send_grid_email
+POSTGRES_NAME=expenseprofiler
+POSTGRES_USER=dbuser
+POSTGRES_PASSWORD=your_password_for_postgres-database
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432

@@ -1,6 +1,6 @@
 # Expense Profiler
-This app is supposed to provide profiling, analizing and reporting data extracted from user expense/income.  
-The idea for this application is taken from two othe applications, which hey have been consolidated together.
+This app is supposed to analize and report the data extracted from user expense/income.  
+The idea for this application is taken from two other applications, which hey have been consolidated together.  
 
 - Here are the references to other two apps:  
 <https://github.com/AdamJedrychowski/Recipt-Scanner.git>  
